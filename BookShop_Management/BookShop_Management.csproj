@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{581850EC-4432-44B7-B149-3DD587227EE7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BookShop_Management</RootNamespace>
+    <AssemblyName>BookShop_Management</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BunifuDataViz 1.0.1">
+      <HintPath>..\..\doan\BunifuDataViz 1.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\doan\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\BaoCaoThuNoDAO.cs" />
+    <Compile Include="DAO\BaoCaoTonKhoDAO.cs" />
+    <Compile Include="DAO\CTHDDAO.cs" />
+    <Compile Include="DAO\CT_TacGiaDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\NguoiDungDAO.cs" />
+    <Compile Include="DAO\PhieuNhapSachDAO.cs" />
+    <Compile Include="DAO\PhieuThuNoDAO.cs" />
+    <Compile Include="DAO\TacGiaDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="DAO\ThamSoDAO.cs" />
+    <Compile Include="DAO\ThongTinSachDAO.cs" />
+    <Compile Include="DTO\BaoCaoThuNo.cs" />
+    <Compile Include="DTO\BaoCaoTonKho.cs" />
+    <Compile Include="DTO\CTHD.cs" />
+    <Compile Include="DTO\CT_TacGia.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\NguoiDung.cs" />
+    <Compile Include="DTO\PhieuNhapSach.cs" />
+    <Compile Include="DTO\PhieuThuNo.cs" />
+    <Compile Include="DTO\TacGia.cs" />
+    <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\ThamSo.cs" />
+    <Compile Include="DTO\ThongTinSach.cs" />
+    <Compile Include="Forms\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TaoXoaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaoXoaSach.Designer.cs">
+      <DependentUpon>TaoXoaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\1. ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\1. ThongKe.Designer.cs">
+      <DependentUpon>1. ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2. NhapSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2. NhapSach.Designer.cs">
+      <DependentUpon>2. NhapSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\3. BanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\3. BanSach.Designer.cs">
+      <DependentUpon>3. BanSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\4. TraCuuSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\4. TraCuuSach.Designer.cs">
+      <DependentUpon>4. TraCuuSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\5. PhieuThuTien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\5. PhieuThuTien.Designer.cs">
+      <DependentUpon>5. PhieuThuTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\6.1 BaoCaoTon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\6.1 BaoCaoTon.Designer.cs">
+      <DependentUpon>6.1 BaoCaoTon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\6.2 BaoCaoCongNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\6.2 BaoCaoCongNo.Designer.cs">
+      <DependentUpon>6.2 BaoCaoCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\7. LichSuBanSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\7. LichSuBanSach.Designer.cs">
+      <DependentUpon>7. LichSuBanSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\DashBoard.resx" />
+    <EmbeddedResource Include="Forms\Login.resx" />
+    <EmbeddedResource Include="Forms\Setting.resx" />
+    <EmbeddedResource Include="Forms\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaoXoaSach.resx">
+      <DependentUpon>TaoXoaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\1. ThongKe.resx" />
+    <EmbeddedResource Include="UserControls\2. NhapSach.resx" />
+    <EmbeddedResource Include="UserControls\3. BanSach.resx" />
+    <EmbeddedResource Include="UserControls\4. TraCuuSach.resx" />
+    <EmbeddedResource Include="UserControls\5. PhieuThuTien.resx" />
+    <EmbeddedResource Include="UserControls\6.1 BaoCaoTon.resx" />
+    <EmbeddedResource Include="UserControls\6.2 BaoCaoCongNo.resx" />
+    <EmbeddedResource Include="UserControls\7. LichSuBanSach.resx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\add_book_80px.png" />
+    <None Include="Resources\Add_Image.png" />
+    <Content Include="Resources\bar_chart_48px_2.png" />
+    <None Include="Resources\x_coordinate_36px_11.png" />
+    <None Include="Resources\bar_chart_48px_21.png" />
+    <Content Include="Resources\bill_48px_1.png" />
+    <None Include="Resources\bill_48px_11.png" />
+    <Content Include="Resources\book_48px_2.png" />
+    <None Include="Resources\book_48px_21.png" />
+    <Content Include="Resources\broom_48px.png" />
+    <None Include="Resources\broom_48px1.png" />
+    <Content Include="Resources\business_building_48px.png" />
+    <None Include="Resources\business_building_48px1.png" />
+    <Content Include="Resources\cash_48px_1.png" />
+    <None Include="Resources\cash_48px_11.png" />
+    <Content Include="Resources\checkmark_48px.png" />
+    <None Include="Resources\checkmark_48px1.png" />
+    <Content Include="Resources\checkmark_48px_1.png" />
+    <None Include="Resources\checkmark_48px_11.png" />
+    <Content Include="Resources\delete_file_80px.png" />
+    <Content Include="Resources\down_right_48px_1.png" />
+    <None Include="Resources\down_right_48px_11.png" />
+    <Content Include="Resources\icons8_google_forms_48px_1.png" />
+    <None Include="Resources\icons8_google_forms_48px_11.png" />
+    <Content Include="Resources\icons8_registration_48px.png" />
+    <None Include="Resources\icons8_registration_48px1.png" />
+    <Content Include="Resources\icons8_registration_48px_1.png" />
+    <None Include="Resources\icons8_registration_48px_11.png" />
+    <Content Include="Resources\icons8_timesheet_48px_1.png" />
+    <None Include="Resources\icons8_timesheet_48px_11.png" />
+    <Content Include="Resources\import_48px_1.png" />
+    <None Include="Resources\import_48px_11.png" />
+    <Content Include="Resources\minus_48px_1.png" />
+    <None Include="Resources\minus_48px_11.png" />
+    <Content Include="Resources\minus_sign_48px.png" />
+    <None Include="Resources\minus_sign_48px1.png" />
+    <Content Include="Resources\minus_sign_48px_1.png" />
+    <None Include="Resources\minus_sign_48px_11.png" />
+    <Content Include="Resources\new_moon_24px.png" />
+    <None Include="Resources\new_moon_24px1.png" />
+    <Content Include="Resources\new_moon_48px_1.png" />
+    <None Include="Resources\new_moon_48px_11.png" />
+    <Content Include="Resources\plus_48px.png" />
+    <None Include="Resources\plus_48px1.png" />
+    <Content Include="Resources\plus_48px_1.png" />
+    <None Include="Resources\plus_48px_11.png" />
+    <Content Include="Resources\refresh_48px.png" />
+    <None Include="Resources\refresh_48px1.png" />
+    <Content Include="Resources\search_48px_1.png" />
+    <None Include="Resources\search_48px_11.png" />
+    <Content Include="Resources\settings_48px.png" />
+    <None Include="Resources\settings_48px1.png" />
+    <Content Include="Resources\settings_48px_1.png" />
+    <None Include="Resources\settings_48px_11.png" />
+    <Content Include="Resources\x_coordinate_36px_1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
