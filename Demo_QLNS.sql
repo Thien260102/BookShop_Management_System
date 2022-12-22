@@ -313,6 +313,21 @@ select *from BAOCAOTONKHO
 delete from BAOCAOTONKHO
 
 
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND01' ,'Nguyen Van A', '08823451', 'NguyenVanA@gmail.com', '731 Tran Hung Dao, Q5, TpHCM', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND02', 'Tran Ngoc Han', '280000' ,'Tran@gmail.com', '23/5 Nguyen Trai, Q5, TpHCM', 'Nu')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND03', 'Tran Minh Long', '0917325476', 'TranLong@gmail.com', '50/34 Le Dai Hanh, Q10, TpHCM', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND04', 'Tran Ngoc Linh', '0938776266', 'TranLinh@gmail.com', '45 Nguyen Canh Chan, Q1, TpHCM', 'Nu')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND06', 'Le Nhat Minh', '08246108', 'LeMinh@gmail.com', '34 Truong Dinh, Q3, TpHCM', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND07', 'Le Hoai Thuong', '08631738',  'LeThuong@gmail.com', '227 Nguyen Van Cu, Q5, TpHCM', 'Nu')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND08', 'Phan Thi Thanh', '0938435756',  'PhanThi@gmail.com', '45/2 An Duong Vuong, Q5, TpHCM', 'Nu')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND10', 'Thien', '0938435756', 'Thien@gmail.com', 'UIT', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND11', 'Tu', '0938435756', 'Tu@gmail.com', 'UIT', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND12', 'Kien', '0938435756',  'Kien@gmail.com', 'UIT', 'Nam')
+INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND13', 'Quan', '0938435756', 'Quan@gmail.com', 'UIT', 'Nam')
+Select *from NGUOIDUNG
+
+
+
 INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDung) values('HD01','KVIP1' ,'2022-11-16', '220500', '220500', 'ND10') --0
 INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDung) values('HD02','KVIP1', '2022-11-16',  '850000', '500000', 'ND10') --350000
 INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDung) values('HD03','KVIP1', '2022-11-16', '236000', '136000', 'ND10') --100000
@@ -371,18 +386,6 @@ INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD30', 'HT07', '2')--47000
 Select *from CTHD
 delete from CTHD
 
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND01' ,'Nguyen Van A', '08823451', 'NguyenVanA@gmail.com', '731 Tran Hung Dao, Q5, TpHCM', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND02', 'Tran Ngoc Han', '280000' ,'Tran@gmail.com', '23/5 Nguyen Trai, Q5, TpHCM', 'Nu')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND03', 'Tran Minh Long', '0917325476', 'TranLong@gmail.com', '50/34 Le Dai Hanh, Q10, TpHCM', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND04', 'Tran Ngoc Linh', '0938776266', 'TranLinh@gmail.com', '45 Nguyen Canh Chan, Q1, TpHCM', 'Nu')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND06', 'Le Nhat Minh', '08246108', 'LeMinh@gmail.com', '34 Truong Dinh, Q3, TpHCM', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND07', 'Le Hoai Thuong', '08631738',  'LeThuong@gmail.com', '227 Nguyen Van Cu, Q5, TpHCM', 'Nu')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND08', 'Phan Thi Thanh', '0938435756',  'PhanThi@gmail.com', '45/2 An Duong Vuong, Q5, TpHCM', 'Nu')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND10', 'Thien', '0938435756', 'Thien@gmail.com', 'UIT', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND11', 'Tu', '0938435756', 'Tu@gmail.com', 'UIT', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND12', 'Kien', '0938435756',  'Kien@gmail.com', 'UIT', 'Nam')
-INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND13', 'Quan', '0938435756', 'Quan@gmail.com', 'UIT', 'Nam')
-Select *from NGUOIDUNG
 
 
 
