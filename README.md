@@ -5,4 +5,4 @@
   * Nguyen Van Thien: Leader, Developer
   * Huynh Minh Quan: Developer
 
-## Using winform and 3-Layer to make it.
+## Using Winform and 3-Layer Architecture to make it.
