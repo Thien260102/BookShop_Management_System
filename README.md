@@ -6,4 +6,4 @@
   * Nguyen Bui Duc Kien: UI
   * Huynh Minh Quan: Developer
 
-## Using Winform and 3-Layer Architecture to make it. Adapting Singleton pattern into Data Access Layer.
+## Using Winform and 3-Layer Architecture to make it. Using Singletone Pattern to build Data Access Layer.
