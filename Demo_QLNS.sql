@@ -1,5 +1,5 @@
-﻿CREATE DATABASE QLNS
-USE DATABASE QLNS
+CREATE DATABASE QLNS;
+USE QLNS;
 
 CREATE TABLE THONGTINSACH
 (
@@ -10,7 +10,7 @@ CREATE TABLE THONGTINSACH
 	GiaBan MONEY,
 	NgayPhatHanh SMALLDATETIME,
 	TenAnh nvarchar(50),
-)
+);
 
 CREATE TABLE PHIEUNHAPSACH
 (
@@ -19,7 +19,7 @@ CREATE TABLE PHIEUNHAPSACH
 	SoLuongNhap INT,
 	GiaNhap MONEY,
 	PRIMARY KEY(NgayNhap, MaSach),
-)
+);
 
 
 
@@ -33,7 +33,7 @@ CREATE TABLE KHACHHANG
 	GioiTinh_KH CHAR(4),	
 	NgayDKTV SMALLDATETIME,
 	SoTienNo MONEY,
-)
+);
 
 CREATE TABLE PHIEUTHUNO
 (
@@ -42,7 +42,7 @@ CREATE TABLE PHIEUTHUNO
 	NgayThuTien SMALLDATETIME,
 	SoTienThanhToan MONEY,
 	GhiChu VARCHAR(30),
-)
+);
 
 
 CREATE TABLE BAOCAOTHUNO
@@ -54,7 +54,7 @@ CREATE TABLE BAOCAOTHUNO
 	NoCuoi MONEY,
 	SoTienNo MONEY,
 	SoTienThanhToan MONEY,
-)
+);
 
 
 
@@ -68,7 +68,7 @@ CREATE TABLE BAOCAOTONKHO
 	SachDaBan INT,
 	TonCuoi INT,
 	Thang CHAR(4),
-)
+);
 
 
 
@@ -82,7 +82,7 @@ CREATE TABLE HOADON
 	GiamGia MONEY,
 	TongHoaDon MONEY,
 	SoTienDaThanhToan MONEY,
-)
+);
 
 CREATE TABLE CTHD
 (
@@ -90,7 +90,7 @@ CREATE TABLE CTHD
 	MaSach CHAR(5),
 	SL_HD INT,
 	PRIMARY KEY(MaHD, MaSach)
-)
+);
 
 CREATE TABLE CT_TACGIA
 ( 
@@ -98,14 +98,14 @@ CREATE TABLE CT_TACGIA
 	MaTacGia CHAR(5),
 	PRIMARY KEY(MaSach, MaTacGia)
     
-)
+);
 
 CREATE TABLE TACGIA
 (
     MaTacGia CHAR(5) PRIMARY KEY,
 	TenTacGia CHAR(30),
 	NgaySinh SMALLDATETIME
-)
+);
 
 CREATE TABLE NGUOIDUNG
 (
@@ -115,7 +115,7 @@ CREATE TABLE NGUOIDUNG
 	Email VARCHAR(20),
 	DiaChi VARCHAR(40),
 	GioiTinh CHAR(4),
-)
+);
 
 CREATE TABLE TAIKHOAN
 ( 
@@ -124,13 +124,13 @@ CREATE TABLE TAIKHOAN
 	MatKhau VARCHAR(30),
 	MaNguoiDung CHAR(5),
 	VaiTro VARCHAR(20),
-)
+);
 CREATE TABLE THAMSO
 (
     MaThamSo CHAR(5) PRIMARY KEY,
 	TenThamSo VARCHAR(30),
 	GiaTri INT,
-)
+);
 
 
 
@@ -138,30 +138,30 @@ CREATE TABLE THAMSO
 
 
 --XTtacgia va thongtinsach
-ALTER TABLE CT_TACGIA ADD CONSTRAINT FK_CTTG_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach)
+ALTER TABLE CT_TACGIA ADD CONSTRAINT FK_CTTG_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach);
 --cttacgia va tacgia
-ALTER TABLE CT_TACGIA ADD CONSTRAINT FK_CTTG_TG FOREIGN KEY(MaTacGia) REFERENCES TACGIA(MaTacGia)
+ALTER TABLE CT_TACGIA ADD CONSTRAINT FK_CTTG_TG FOREIGN KEY(MaTacGia) REFERENCES TACGIA(MaTacGia);
 --taikhoan va nguoidung
-ALTER TABLE TAIKHOAN ADD CONSTRAINT FK_TK_ND FOREIGN KEY(MaNguoiDung) REFERENCES NGUOIDUNG(MaNguoiDung)
+ALTER TABLE TAIKHOAN ADD CONSTRAINT FK_TK_ND FOREIGN KEY(MaNguoiDung) REFERENCES NGUOIDUNG(MaNguoiDung);
 --hoadon va nguoidung
-ALTER TABLE HOADON ADD CONSTRAINT FK_HD_ND FOREIGN KEY(MaNguoiDung) REFERENCES NGUOIDUNG(MaNguoiDung)
+ALTER TABLE HOADON ADD CONSTRAINT FK_HD_ND FOREIGN KEY(MaNguoiDung) REFERENCES NGUOIDUNG(MaNguoiDung);
 --cthd va hoadon
-ALTER TABLE CTHD ADD CONSTRAINT FK_CTHD_HD FOREIGN KEY(MaHD) REFERENCES HOADON(MaHD)
+ALTER TABLE CTHD ADD CONSTRAINT FK_CTHD_HD FOREIGN KEY(MaHD) REFERENCES HOADON(MaHD);
 
 
 
 
 
 --hoadon va khachhang
-ALTER TABLE HOADON ADD CONSTRAINT FK_HD_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH)
+ALTER TABLE HOADON ADD CONSTRAINT FK_HD_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH);
 --CTHD VA THONGTINSACH
-ALTER TABLE CTHD ADD CONSTRAINT FK_CTHD_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach)
+ALTER TABLE CTHD ADD CONSTRAINT FK_CTHD_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach);
 --baocaothuno va phieuthuno
 
-ALTER TABLE PHIEUNHAPSACH ADD CONSTRAINT FK_PNS_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach)
-ALTER TABLE BAOCAOTHUNO ADD CONSTRAINT FK_BCTN_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH)
-ALTER TABLE BAOCAOTONKHO ADD CONSTRAINT FK_BCTK_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach)
-ALTER TABLE PHIEUTHUNO ADD CONSTRAINT FK_PTN_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH)
+ALTER TABLE PHIEUNHAPSACH ADD CONSTRAINT FK_PNS_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach);
+ALTER TABLE BAOCAOTHUNO ADD CONSTRAINT FK_BCTN_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH);
+ALTER TABLE BAOCAOTONKHO ADD CONSTRAINT FK_BCTK_TTS FOREIGN KEY(MaSach) REFERENCES THONGTINSACH(MaSach);
+ALTER TABLE PHIEUTHUNO ADD CONSTRAINT FK_PTN_KH FOREIGN KEY(MaKH) REFERENCES KHACHHANG(MaKH);
 
 
 
@@ -200,8 +200,8 @@ INSERT INTO THONGTINSACH(MaSach, TheLoai, TenSach, SoLuong, GiaBan, NgayPhatHanh
 INSERT INTO THONGTINSACH(MaSach, TheLoai, TenSach, SoLuong, GiaBan, NgayPhatHanh, TenAnh) values ('TO61', 'On Thi THPT', 'Chinh phuc lich su', '150', '13650', '2018-08-22', 'Chinh phuc lich su')
 INSERT INTO THONGTINSACH(MaSach, TheLoai, TenSach, SoLuong, GiaBan, NgayPhatHanh, TenAnh) values ('TO71', 'On Thi THPT', 'Giai ma de thi DGNL', '150', '12600', '2019-07-29', 'Giai ma de thi DGNL')
 
-SELECT *FROM ThongTinSach
-DELETE FROM THONGTINSACH
+---SELECT *FROM ThongTinSach
+---DELETE FROM THONGTINSACH
 
 
 
@@ -222,7 +222,7 @@ INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-11-15', 'HT02', '200', '90000')
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-11-15', 'HT03', '150', '45000')
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-11-15', 'HT04', '240', '50000')
-INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-15', 'HT05', '180', '30000')
+--INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-15', 'HT05', '180', '30000')
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-15', 'HT06', '400', '44000')
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-15', 'HT07', '400', '44000')
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-15', 'HT08', '240', '40000')
@@ -237,8 +237,8 @@ INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-20', 'TO51', '200', '70000') 
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-20', 'TO61', '200', '13000') 
 INSERT INTO PHIEUNHAPSACH(NgayNhap, MaSach, SoLuongNhap, GiaNhap) values ('2022-12-20', 'TO71', '200', '12000') 
-Select *From PHIEUNHAPSACH
-delete from PHIEUNHAPSACH
+---Select *From PHIEUNHAPSACH
+---delete from PHIEUNHAPSACH
 
 
 
@@ -252,8 +252,8 @@ INSERT INTO KHACHHANG(MaKH, HoTen, SDT_KH, Email_KH, DiaChi_KH, GioiTinh_KH, Nga
 INSERT INTO KHACHHANG(MaKH, HoTen, SDT_KH, Email_KH, DiaChi_KH, GioiTinh_KH, NgayDKTV) VALUES ('KVIP1', 'Nguyen Van Thien', '20521952', 'Thien@gmail.com', 'UIT', 'Nam',  '2002-10-12')
 INSERT INTO KHACHHANG(MaKH, HoTen, SDT_KH, Email_KH, DiaChi_KH, GioiTinh_KH, NgayDKTV) VALUES ('KVIP2', 'Nguyen Van Kien', '20521953', 'Kien@gmail.com', 'UIT', 'Nam',  '2022-11-12')
 INSERT INTO KHACHHANG(MaKH, HoTen, SDT_KH, Email_KH, DiaChi_KH, GioiTinh_KH, NgayDKTV) VALUES ('KVIP3', 'Nguyen Nhu Tu', '20522098', 'Tu@gmail.com', 'UIT', 'Nam',  '2022-09-19')
-SELECT *FROM KHACHHANG
-Delete from KhachHang
+---SELECT *FROM KHACHHANG
+---Delete from KhachHang
 
 
 
@@ -271,7 +271,7 @@ INSERT INTO PHIEUTHUNO(MaPTN, MaKH, NgayThuTien, SoTienThanhToan, GhiChu) values
 INSERT INTO PHIEUTHUNO(MaPTN, MaKH, NgayThuTien, SoTienThanhToan, GhiChu) values ('PTN13', 'KVIP2', '2022-12-30', '100000', 'Khach hang than thien')
 
 select *from PHIEUTHUNO
-DELETE FROM PHIEUTHUNO
+---DELETE FROM PHIEUTHUNO
 
 
 INSERT INTO BAOCAOTHUNO(MaBCTN, MaKH, Thang, NoDau, NoCuoi, SoTienNo, SoTienThanhToan) values ('BCN01', 'KHH01', '11', '58000', '58000', '58000', '58000') 
@@ -285,7 +285,7 @@ INSERT INTO BAOCAOTHUNO(MaBCTN, MaKH, Thang, NoDau, NoCuoi, SoTienNo, SoTienThan
 INSERT INTO BAOCAOTHUNO(MaBCTN, MaKH, Thang, NoDau, NoCuoi, SoTienNo, SoTienThanhToan) values ('BCN10', 'KVIP1', '11', '450000', '450000', '450000', '350000') 
 INSERT INTO BAOCAOTHUNO(MaBCTN, MaKH, Thang, NoDau, NoCuoi, SoTienNo, SoTienThanhToan) values ('BCN11', 'KVIP2', '12', '100000', '100000', '100000', '100000') 
 select *from BAOCAOTHUNO  
-delete from BAOCAOTHUNO
+---delete from BAOCAOTHUNO
 
 
 
@@ -310,7 +310,7 @@ INSERT INTO BAOCAOTONKHO(MaBCTK, MaSach, TonDau, SachDaNhap, SachDaBan, TonCuoi,
 INSERT INTO BAOCAOTONKHO(MaBCTK, MaSach, TonDau, SachDaNhap, SachDaBan, TonCuoi, Thang) VALUES('BCT20', 'HT11', '110', '190', '200', '100', '12')
 INSERT INTO BAOCAOTONKHO(MaBCTK, MaSach, TonDau, SachDaNhap, SachDaBan, TonCuoi, Thang) VALUES('BCT21', 'HT12', '200', '259', '159', '300', '12')
 select *from BAOCAOTONKHO
-delete from BAOCAOTONKHO
+---delete from BAOCAOTONKHO
 
 
 INSERT INTO NGUOIDUNG(MaNguoiDung, HoTen, SDT, Email, DiaChi, GioiTinh) values ('ND01' ,'Nguyen Van A', '08823451', 'NguyenVanA@gmail.com', '731 Tran Hung Dao, Q5, TpHCM', 'Nam')
@@ -354,14 +354,14 @@ INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDun
 INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDung) values('HD28','KHH06', '2022-10-17', '340000', '340000','ND06') --0
 INSERT INTO HOADON(MaHD, MaKH, NgayHD, TongHoaDon, SoTienDaThanhToan, MaNguoiDung) values('HD29','KHH06', '2022-10-17', '72000', '72000','ND06') --0
 select *from HOADON
-delete from HOADON
+---delete from HOADON
 
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD01', 'HT01', '6')--220500
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD02', 'HT02', '9')--850500
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD03', 'HT03', '5')--236250
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD04', 'HT04', '2')--105000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD06', 'HT06', '5')--231000
-INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD07', 'HT07', '2')--47000
+--INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD07', 'HT07', '2')--47000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD09', 'KH09', '2')--42000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD11', 'KH11', '1')--42000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD12', 'KH12', '3')--173000
@@ -370,7 +370,7 @@ INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD14', 'TO01', '5')--94500
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD15', 'TO21', '5')--368000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD16', 'TO31', '5')--95000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD17', 'TO41', '5')--265000
-INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD18', 'T051', '5')--370000
+--INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD18', 'T051', '5')--370000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD19', 'TO61', '5')--70000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD20', 'HT01', '6')--220500
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD21', 'HT02', '9')--850500
@@ -382,9 +382,9 @@ INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD26', 'KH01', '6')--450000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD27', 'KH02', '9')--567000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD28', 'KH03', '5')--340000
 INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD29', 'KH04', '2')--72000
-INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD30', 'HT07', '2')--47000
+--INSERT INTO CTHD(MaHD, MaSach, SL_HD) values ('HD30', 'HT07', '2')--47000
 Select *from CTHD
-delete from CTHD
+---delete from CTHD
 
 
 
@@ -394,10 +394,8 @@ INSERT INTO TAIKHOAN(MaTK, TenTK, MatKhau, MaNguoiDung, VaiTro) values ('TK01', 
 INSERT INTO TAIKHOAN(MaTK, TenTK, MatKhau, MaNguoiDung, VaiTro) values ('TK02', 'TuUIT', 'TuUIT123', 'ND11', 'USER')
 INSERT INTO TAIKHOAN(MaTK, TenTK, MatKhau, MaNguoiDung, VaiTro) values ('TK03', 'QuanUIT', 'QuanUIT123', 'ND13', 'USER')
 INSERT INTO TAIKHOAN(MaTK, TenTK, MatKhau, MaNguoiDung, VaiTro) values ('TK04', 'KienUIT', 'KienUIT123', 'ND12', 'USER')
-SELECT* FROM TAIKHOAN
-
-
 Insert into TAIKHOAN values('TK00', 'admin', '123', 'ND10', 'ADMIN')
+SELECT* FROM TAIKHOAN
 
 
 
@@ -405,12 +403,11 @@ INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG01', 'Kim Dung', '12
 INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG02', 'Nishi Katsuzo', '11-01-1988')
 INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG03', 'Thich Nhat Hanh', '09-10-1973')
 INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG04', 'Albert Rutherford', '01-09-1999')
-INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG05', 'Ly The Cuong', '30-06-1988')
+INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG05', 'Ly The Cuong', '06-30-1988')
 INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG06', 'Ngo Quang Thien', '11-01-1989')
 INSERT INTO TACGIA(MaTacGia, TenTacGia, NgaySinh) values('TG07', 'Le Duc Thieu', '08-18-1978')
 select *from TACGIA
-delete from TACGIA
-
+--delete from TACGIA
 
 
 
@@ -440,7 +437,7 @@ INSERT INTO CT_TACGIA(MaSach, MaTacGia) values('T041', 'TG08')
 INSERT INTO CT_TACGIA(MaSach, MaTacGia) values('T051', 'TG09')
 INSERT INTO CT_TACGIA(MaSach, MaTacGia) values('T061', 'TG10')
 select *from CT_TACGIA
-delete from CT_TACGIA
+--delete from CT_TACGIA
 
 
 
@@ -448,6 +445,5 @@ Insert into THAMSO values ('ST01', 'So luong nhap toi thieu', 150)
 Insert into THAMSO values ('ST02', 'Luong ton toi thieu', 20)
 Insert into THAMSO values ('ST03', 'So tien thu', 1) --1: true, 0: false, Tien thu ko vuot qua tien no
 Insert into THAMSO values ('ST04', 'Tien no toi da', 1000000)
-
 
 
