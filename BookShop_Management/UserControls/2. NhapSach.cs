@@ -70,7 +70,7 @@ namespace BookShop_Management.UserControls
                 item.SubItems.Add(textBox_TacGia.Text);
                 item.SubItems.Add(textBox_SoLuong.Text);
                 item.SubItems.Add(double.Parse(textBox_DonGia.Text).ToString("# ### ###"));
-                item.SubItems.Add(dateTimePicker_NgayNhap.Text);
+                item.SubItems.Add((dateTimePicker_NgayNhap.Value).ToString("yyyy-MM-dd HH:mm:ss"));
 
                 listView_NhapSach.Items.Add(item);
             }

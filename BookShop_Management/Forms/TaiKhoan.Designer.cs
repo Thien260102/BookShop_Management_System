@@ -41,20 +41,20 @@ namespace BookShop_Management.Forms
             this.button_Save = new System.Windows.Forms.Button();
             this.dataGridView_TaiKhoan = new System.Windows.Forms.DataGridView();
             this.panel_TenSach = new System.Windows.Forms.Panel();
+            this.comboBox_MaTK = new System.Windows.Forms.ComboBox();
             this.label_MaTK = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_TenTK = new System.Windows.Forms.Label();
             this.textBox_TenTK = new System.Windows.Forms.TextBox();
-            this.comboBox_MaTK = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label_MatKhau = new System.Windows.Forms.Label();
             this.textBox_MatKhau = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.comboBox_MaND = new System.Windows.Forms.ComboBox();
             this.label_MaNguoiDung = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label_VaiTro = new System.Windows.Forms.Label();
             this.comboBox_VaiTro = new System.Windows.Forms.ComboBox();
-            this.comboBox_MaND = new System.Windows.Forms.ComboBox();
+            this.label_VaiTro = new System.Windows.Forms.Label();
             this.label_Xoa = new System.Windows.Forms.Label();
             this.panel_TaiKhoan_Top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_TaiKhoan)).BeginInit();
@@ -185,6 +185,19 @@ namespace BookShop_Management.Forms
             this.panel_TenSach.Size = new System.Drawing.Size(334, 30);
             this.panel_TenSach.TabIndex = 7;
             // 
+            // comboBox_MaTK
+            // 
+            this.comboBox_MaTK.BackColor = System.Drawing.Color.LightGray;
+            this.comboBox_MaTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
+            this.comboBox_MaTK.FormattingEnabled = true;
+            this.comboBox_MaTK.Location = new System.Drawing.Point(180, 0);
+            this.comboBox_MaTK.MaxLength = 5;
+            this.comboBox_MaTK.Name = "comboBox_MaTK";
+            this.comboBox_MaTK.Size = new System.Drawing.Size(154, 26);
+            this.comboBox_MaTK.TabIndex = 3;
+            this.comboBox_MaTK.SelectedValueChanged += new System.EventHandler(this.comboBox_MaTK_SelectedValueChanged);
+            this.comboBox_MaTK.TextChanged += new System.EventHandler(this.comboBox_MaTK_TextChanged);
+            // 
             // label_MaTK
             // 
             this.label_MaTK.AutoSize = true;
@@ -232,19 +245,6 @@ namespace BookShop_Management.Forms
             this.textBox_TenTK.Size = new System.Drawing.Size(154, 26);
             this.textBox_TenTK.TabIndex = 0;
             // 
-            // comboBox_MaTK
-            // 
-            this.comboBox_MaTK.BackColor = System.Drawing.Color.LightGray;
-            this.comboBox_MaTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
-            this.comboBox_MaTK.FormattingEnabled = true;
-            this.comboBox_MaTK.Location = new System.Drawing.Point(180, 0);
-            this.comboBox_MaTK.MaxLength = 5;
-            this.comboBox_MaTK.Name = "comboBox_MaTK";
-            this.comboBox_MaTK.Size = new System.Drawing.Size(154, 26);
-            this.comboBox_MaTK.TabIndex = 3;
-            this.comboBox_MaTK.SelectedValueChanged += new System.EventHandler(this.comboBox_MaTK_SelectedValueChanged);
-            this.comboBox_MaTK.TextChanged += new System.EventHandler(this.comboBox_MaTK_TextChanged);
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label_MatKhau);
@@ -289,6 +289,18 @@ namespace BookShop_Management.Forms
             this.panel7.Size = new System.Drawing.Size(334, 30);
             this.panel7.TabIndex = 10;
             // 
+            // comboBox_MaND
+            // 
+            this.comboBox_MaND.BackColor = System.Drawing.Color.LightGray;
+            this.comboBox_MaND.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_MaND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
+            this.comboBox_MaND.FormattingEnabled = true;
+            this.comboBox_MaND.Location = new System.Drawing.Point(180, 0);
+            this.comboBox_MaND.MaxLength = 5;
+            this.comboBox_MaND.Name = "comboBox_MaND";
+            this.comboBox_MaND.Size = new System.Drawing.Size(154, 26);
+            this.comboBox_MaND.TabIndex = 4;
+            // 
             // label_MaNguoiDung
             // 
             this.label_MaNguoiDung.AutoSize = true;
@@ -310,18 +322,6 @@ namespace BookShop_Management.Forms
             this.panel8.Size = new System.Drawing.Size(334, 30);
             this.panel8.TabIndex = 11;
             // 
-            // label_VaiTro
-            // 
-            this.label_VaiTro.AutoSize = true;
-            this.label_VaiTro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label_VaiTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
-            this.label_VaiTro.Location = new System.Drawing.Point(3, 3);
-            this.label_VaiTro.Name = "label_VaiTro";
-            this.label_VaiTro.Size = new System.Drawing.Size(102, 19);
-            this.label_VaiTro.TabIndex = 2;
-            this.label_VaiTro.Text = "label_VaiTro";
-            this.label_VaiTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // comboBox_VaiTro
             // 
             this.comboBox_VaiTro.BackColor = System.Drawing.Color.LightGray;
@@ -337,17 +337,17 @@ namespace BookShop_Management.Forms
             this.comboBox_VaiTro.Size = new System.Drawing.Size(154, 26);
             this.comboBox_VaiTro.TabIndex = 4;
             // 
-            // comboBox_MaND
+            // label_VaiTro
             // 
-            this.comboBox_MaND.BackColor = System.Drawing.Color.LightGray;
-            this.comboBox_MaND.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_MaND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
-            this.comboBox_MaND.FormattingEnabled = true;
-            this.comboBox_MaND.Location = new System.Drawing.Point(180, 0);
-            this.comboBox_MaND.MaxLength = 5;
-            this.comboBox_MaND.Name = "comboBox_MaND";
-            this.comboBox_MaND.Size = new System.Drawing.Size(154, 26);
-            this.comboBox_MaND.TabIndex = 4;
+            this.label_VaiTro.AutoSize = true;
+            this.label_VaiTro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label_VaiTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(107)))), ((int)(((byte)(180)))));
+            this.label_VaiTro.Location = new System.Drawing.Point(3, 3);
+            this.label_VaiTro.Name = "label_VaiTro";
+            this.label_VaiTro.Size = new System.Drawing.Size(102, 19);
+            this.label_VaiTro.TabIndex = 2;
+            this.label_VaiTro.Text = "label_VaiTro";
+            this.label_VaiTro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_Xoa
             // 

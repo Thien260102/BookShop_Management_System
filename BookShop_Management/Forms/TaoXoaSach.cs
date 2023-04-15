@@ -270,9 +270,8 @@ namespace BookShop_Management.Forms
                 {
                     try
                     {
-                        if ((CT_TacGiaDAO.Instance.XoaCTTacGiaTu_MaSach(textBox_MaSach.Text)
-                            && ThongTinSachDAO.Instance.XoaSach(textBox_MaSach.Text))
-                            )
+                        if ((CT_TacGiaDAO.Instance.XoaCTTacGiaTu_MaSach(textBox_MaSach.Text.Trim())
+                            && ThongTinSachDAO.Instance.XoaSach(textBox_MaSach.Text.Trim())))
                             MessageBox.Show("Xóa sách thành công");
                         List_IDSach = ThongTinSachDAO.Instance.Lay_MaSach();
                     }

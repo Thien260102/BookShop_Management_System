@@ -35,7 +35,10 @@ namespace BookShop_Management.DAO
             string query = "Delete from CT_TacGia " +
                 "Where MaSach = @MaSach";
 
-            if (DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaSach }) > 0)
+            string query2 = "Select * from CT_TacGia " +
+                "where MaSach = @MaSach";
+            if (DataProvider.Instance.ExecuteQuery(query2, new object[] { MaSach }).Rows.Count == 0 
+                || DataProvider.Instance.ExecuteNonQuery(query, new object[] { MaSach }) > 0)
                 return true;
 
             return false;

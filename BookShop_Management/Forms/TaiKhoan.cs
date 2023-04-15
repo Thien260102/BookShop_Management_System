@@ -99,16 +99,8 @@ namespace BookShop_Management.Forms
 
                 if (dataGridView_TaiKhoan.Rows.Count != 0)
                 {
-                    foreach(DataGridViewRow i in dataGridView_TaiKhoan.Rows)
-                        if(i.Cells["TenTK"].Value != null
-                            && i.Cells["TenTK"].Value.ToString() == textBox_TenTK.Text)
-                        {
-                            MessageBox.Show("Tên tài khoản đã tồn tại.", "Tài Khoản.");
-                            return;
-                        }
-
                     foreach (var i in comboBox_MaTK.Items)
-                        if (i.ToString() == comboBox_MaTK.Text)
+                        if (i.ToString().Trim() == comboBox_MaTK.Text.Trim())
                         {
                             flag = true;
                             break;
@@ -126,12 +118,20 @@ namespace BookShop_Management.Forms
                         notify = "Cập nhật tài khoản thành công.";
                     else
                         notify = "Cập nhật tài khoản thất bại.";
-
                     flag = false;
                 }
                 else
                 {
-                    if (TaiKhoanDAO.Instance.ThemTK(tk))
+                    flag = true;
+                    foreach (DataGridViewRow i in dataGridView_TaiKhoan.Rows)
+                        if (i.Cells["TenTK"].Value != null
+                            && i.Cells["TenTK"].Value.ToString().Trim() == textBox_TenTK.Text.Trim())
+                        {
+                            notify = "Tên tài khoản đã tồn tại.";
+                            flag = false;
+                        }
+
+                    if (flag == true && TaiKhoanDAO.Instance.ThemTK(tk))
                         notify = "Thêm mới tài khoản thành công.";
                     else
                         notify = "Thêm mới tài khoản thất bại.";
